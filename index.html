@@ -1,34 +1,116 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Okimoti</title>
   <style>
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image: url('./pexels-photo-209170.jpeg'); /* https://www.pexels.com/photo/abandoned-aged-architecture-black-and-white-209170/ CC0 License */
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: url('./texture.jpg');
+      background-repeat: repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      -webkit-font-smoothing: antialiased;
+      font-family: 'Avenir Next', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    }
 
-html body {
-  background: rgba(0,0,0,0.3);
-}
+    html body {
+      background: rgba(0, 0, 0, 0.3);
+    }
 
-h1 {
-  color: #fff;
-  font-size: 100px;
-}
+    h1 {
+      color: #fff;
+      font-size: 20px;
+      letter-spacing: 2px;
+    }
+
+    #wrapper {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background: radial-gradient(rgba(4,24,8,0.4), rgba(0,0,0,0.1))
+    }
+
+    #logo {
+      filter: drop-shadow(0 0 60px rgba(250, 91, 82, 0.4));
+      animation: heart 1.9s cubic-bezier(0.86, 0, 0.07, 1) 0.75s infinite;
+    }
+
+    @keyframes heart {
+      0% {
+        transform: scale(1);
+      }
+
+      1% {
+        transform: scale(1.05);
+      }
+
+      35% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes bgflash {
+      0% { height: 0; transform: translateY(0);}
+      50% { height: 100%; transform: translateY(0);}
+      100% { height: 100%; transform: translateY(100%);}
+    }
+
+    a {
+      width: 140px;
+      height: 36px;
+      border: solid 1px #fff;
+      border-radius: 4px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      margin-top: 8px;
+      font-weight: bold;
+      overflow: hidden;
+      position: relative;
+    }
+
+    a::before {
+      width: 100%;
+      height: 0;
+      background: #fff;
+      content: '';
+      display: block;
+      left: 0;
+      top: 0;
+      position: absolute;
+    }
+
+    a:hover::before {
+      animation: bgflash 0.3s ease-out;
+      transform: translateY(0);
+    }
   </style>
 </head>
+
 <body>
-  <h1>Okimoti Kyomu Doumei</h1>
+  <div id="wrapper">
+    <img id="logo" src="/logo.svg" width="200">
+    <h1>
+      <img src="/logotype.svg" width="280" alt="Okimoti Void Alliance">
+    </h1>
+    <a href="https://github.com/Okimoti" target="_blank">
+      Check it out
+    </a>
+  </div>
 </body>
+
 </html>
